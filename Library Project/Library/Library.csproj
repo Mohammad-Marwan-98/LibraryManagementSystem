@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3172070-4CCD-4A93-BE3E-48617C68B387}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Library</RootNamespace>
+    <AssemblyName>Library</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\..\.nuget\packages\guna.ui2.winforms\2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Books\ctrlFindBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Books\ctrlFindBook.Designer.cs">
+      <DependentUpon>ctrlFindBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookCopies\frmAddBookCopies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookCopies\frmAddBookCopies.Designer.cs">
+      <DependentUpon>frmAddBookCopies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Borrowing Records\frmAddBorrowRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrowing Records\frmAddBorrowRecord.Designer.cs">
+      <DependentUpon>frmAddBorrowRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Borrowing Records\frmBorrowingRecordNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrowing Records\frmBorrowingRecordNotes.Designer.cs">
+      <DependentUpon>frmBorrowingRecordNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookCopies\frmDeleteCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookCopies\frmDeleteCopy.Designer.cs">
+      <DependentUpon>frmDeleteCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Borrowing Records\frmListBorrowingRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrowing Records\frmListBorrowingRecords.Designer.cs">
+      <DependentUpon>frmListBorrowingRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\frmAddReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\frmAddReservation.Designer.cs">
+      <DependentUpon>frmAddReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\frmListReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\frmListReservations.Designer.cs">
+      <DependentUpon>frmListReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Readers\frmExtendSubscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Readers\frmExtendSubscription.Designer.cs">
+      <DependentUpon>frmExtendSubscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fines\frmListFines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fines\frmListFines.Designer.cs">
+      <DependentUpon>frmListFines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global Classes\clsGlobal.cs" />
+    <Compile Include="Users\frmAddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmAddUpdateUser.Designer.cs">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmListUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmListUsers.Designer.cs">
+      <DependentUpon>frmListUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmShowUserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmShowUserDetails.Designer.cs">
+      <DependentUpon>frmShowUserDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\ctrlPersonDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\ctrlPersonDetails.Designer.cs">
+      <DependentUpon>ctrlPersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Readers\frmAddUpdateReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Readers\frmAddUpdateReader.Designer.cs">
+      <DependentUpon>frmAddUpdateReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\ctrlBookDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Books\ctrlBookDetails.Designer.cs">
+      <DependentUpon>ctrlBookDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\frmAddUpdateBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\frmAddUpdateBook.Designer.cs">
+      <DependentUpon>frmAddUpdateBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\ctrlAddUpdatePersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\ctrlAddUpdatePersonInfo.Designer.cs">
+      <DependentUpon>ctrlAddUpdatePersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Readers\frmListReaders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Readers\frmListReaders.Designer.cs">
+      <DependentUpon>frmListReaders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\frmListBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\frmListBooks.Designer.cs">
+      <DependentUpon>frmListBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Books\frmShowBookDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Books\frmShowBookDetails.Designer.cs">
+      <DependentUpon>frmShowBookDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Readers\frmShowReaderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Readers\frmShowReaderDetails.Designer.cs">
+      <DependentUpon>frmShowReaderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Books\ctrlFindBook.resx">
+      <DependentUpon>ctrlFindBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookCopies\frmAddBookCopies.resx">
+      <DependentUpon>frmAddBookCopies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrowing Records\frmAddBorrowRecord.resx">
+      <DependentUpon>frmAddBorrowRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrowing Records\frmBorrowingRecordNotes.resx">
+      <DependentUpon>frmBorrowingRecordNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookCopies\frmDeleteCopy.resx">
+      <DependentUpon>frmDeleteCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrowing Records\frmListBorrowingRecords.resx">
+      <DependentUpon>frmListBorrowingRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\frmAddReservation.resx">
+      <DependentUpon>frmAddReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\frmListReservations.resx">
+      <DependentUpon>frmListReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readers\frmExtendSubscription.resx">
+      <DependentUpon>frmExtendSubscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fines\frmListFines.resx">
+      <DependentUpon>frmListFines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmAddUpdateUser.resx">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmListUsers.resx">
+      <DependentUpon>frmListUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmShowUserDetails.resx">
+      <DependentUpon>frmShowUserDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\ctrlPersonDetails.resx">
+      <DependentUpon>ctrlPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readers\frmAddUpdateReader.resx">
+      <DependentUpon>frmAddUpdateReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\ctrlBookDetails.resx">
+      <DependentUpon>ctrlBookDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\frmAddUpdateBook.resx">
+      <DependentUpon>frmAddUpdateBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\ctrlAddUpdatePersonInfo.resx">
+      <DependentUpon>ctrlAddUpdatePersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readers\frmListReaders.resx">
+      <DependentUpon>frmListReaders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\frmListBooks.resx">
+      <DependentUpon>frmListBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Books\frmShowBookDetails.resx">
+      <DependentUpon>frmShowBookDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readers\frmShowReaderDetails.resx">
+      <DependentUpon>frmShowReaderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BorrowBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Readers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fees1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BorrowBook1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Library.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Books64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrowbook64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fees64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\readers %281%2964.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\readers 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryBusiness\LibraryBusiness.csproj">
+      <Project>{547b8539-4425-424b-8da1-2f928d2e0fd6}</Project>
+      <Name>LibraryBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListBooks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListBooks1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Language1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Author.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Genre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ISBN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Language.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publication Date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descriptions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closebtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Savebtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook16%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete Book 24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditBook24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-book24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook32%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Book 32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete Book 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete Book 32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-book %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Readers128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddReader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings128%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add64%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Address2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Name.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\number-four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\number-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\number-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Age.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\age2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telephone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editPerson %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Name1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subscription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeletePerson32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditPerson32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reader128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User128%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User128%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User512%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User512%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangePassword32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User32u.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Read512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignOut32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserInfo128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangePassword32%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddRecord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BorrowBook128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManageBooks32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteCopy32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCopy32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copies32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook32%281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook32%281%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addopy32%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteCopy32%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManageBook32%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExtendBorrowing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BroowingRecordNotes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CompleteBorrowing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookDamaged.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fine128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reserve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddReservation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteReservation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notify.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
